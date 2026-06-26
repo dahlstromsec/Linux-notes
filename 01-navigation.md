@@ -38,9 +38,9 @@ Example output:
 
 ### Common Uses
 
-* Verify your current location in the file system.
-* Avoid running commands in the wrong directory.
-* Confirm where files will be created or modified.
+- Verify your current location in the file system.
+- Avoid running commands in the wrong directory.
+- Confirm where files will be created or modified.
 
 ---
 
@@ -52,9 +52,8 @@ Before searching log files, editing configuration files, or running scripts, it 
 
 ### Related Commands
 
-* `ls`
-* `cd`
-* `find`
+- `ls`
+- `cd`
 
 ---
 
@@ -90,9 +89,9 @@ Documents  Downloads  Pictures  Music
 
 ### Common Uses
 
-* View the contents of the current directory.
-* Confirm that a file or directory exists.
-* Quickly inspect the structure of a directory.
+- View the contents of the current directory.
+- Confirm that a file or directory exists.
+- Quickly inspect the structure of a directory.
 
 ---
 
@@ -104,9 +103,9 @@ The `ls` command is frequently used when navigating Linux systems during securit
 
 ### Related Commands
 
-* `pwd`
-* `cd`
-* `find`
+- `pwd`
+- `cd`
+- `find`
 
 ---
 
@@ -136,17 +135,17 @@ Example output:
 
 ```text
 drwxr-xr-x 2 christoffer users 4096 Jul 30 12:15 Documents
--rw-r--r-- 1 christoffer users  842 Jul 29 20:48 notes.txt
+-rw-r--r-- 1 christoffer users 842 Jul 29 20:48 notes.txt
 ```
 
 ---
 
 ### Common Uses
 
-* View file permissions.
-* Check file ownership.
-* See file sizes and modification dates.
-* Display detailed information about files and directories.
+- View file permissions.
+- Check file ownership.
+- See file sizes and modification dates.
+- Display detailed information about files and directories.
 
 ---
 
@@ -158,7 +157,7 @@ The `ls -l` command is commonly used to inspect file permissions and ownership. 
 
 ### Related Commands
 
-* `ls`
-* `chmod`
-* `chown`
-* `stat`
+- `ls`
+- `chmod`
+- `chown`
+- `stat`

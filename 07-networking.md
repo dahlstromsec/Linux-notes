@@ -1,6 +1,24 @@
 # Networking
 
-Networking commands help inspect interfaces, test connectivity, troubleshoot name resolution, and securely communicate with remote systems.
+> **Estimated Reading Time:** 15–20 minutes
+> **Difficulty:** Beginner–Intermediate
+> **Prerequisites:** Navigation
+
+Networking commands help you inspect interfaces, test connectivity, troubleshoot DNS, identify listening services, and securely connect to remote systems.
+
+---
+
+## What You'll Learn
+
+* Viewing network interfaces
+* Testing connectivity
+* Querying DNS
+* Viewing listening ports
+* Secure remote access
+
+---
+
+# Networking Commands
 
 ---
 
@@ -8,7 +26,7 @@ Networking commands help inspect interfaces, test connectivity, troubleshoot nam
 
 ### Purpose
 
-Displays network interfaces and their IP addresses.
+Displays network interfaces and IP addresses.
 
 ### Syntax
 
@@ -18,18 +36,17 @@ ip a
 
 ### Common Uses
 
-- View IP addresses.
-- Check interface status.
-- Troubleshoot connectivity.
+* View IP addresses.
+* Verify interface status.
+* Troubleshoot networking.
 
 ### Cybersecurity Context
 
-Useful when identifying interface configuration during investigations or lab work.
+Useful when identifying interface configuration during investigations or penetration testing.
 
 ### Related Commands
 
-- `ip r`
-- `ss`
+* `ip r`
 
 ---
 
@@ -37,7 +54,7 @@ Useful when identifying interface configuration during investigations or lab wor
 
 ### Purpose
 
-Displays the routing table.
+Displays the system routing table.
 
 ### Syntax
 
@@ -47,16 +64,16 @@ ip r
 
 ### Common Uses
 
-- Verify the default gateway.
-- Troubleshoot routing issues.
+* View the default gateway.
+* Troubleshoot routing.
 
 ### Cybersecurity Context
 
-Helps determine how traffic leaves the host.
+Helps determine how traffic reaches external networks.
 
 ### Related Commands
 
-- `ip a`
+* `ip a`
 
 ---
 
@@ -64,7 +81,7 @@ Helps determine how traffic leaves the host.
 
 ### Purpose
 
-Tests network connectivity using ICMP.
+Tests connectivity using ICMP.
 
 ### Syntax
 
@@ -72,24 +89,27 @@ Tests network connectivity using ICMP.
 ping HOST
 ```
 
-### Example
+### Examples
 
 ```bash
+ping google.com
+
 ping 8.8.8.8
 ```
 
 ### Common Uses
 
-- Verify connectivity.
-- Measure latency.
+* Verify connectivity.
+* Measure latency.
+* Troubleshoot networking.
 
 ### Cybersecurity Context
 
-Useful during troubleshooting, though ICMP may be blocked on some systems.
+Useful during troubleshooting, although ICMP may be disabled on production systems.
 
 ### Related Commands
 
-- `traceroute`
+* `traceroute`
 
 ---
 
@@ -97,7 +117,7 @@ Useful during troubleshooting, though ICMP may be blocked on some systems.
 
 ### Purpose
 
-Shows the path packets take to a destination.
+Displays the path packets take to a destination.
 
 ### Syntax
 
@@ -105,9 +125,24 @@ Shows the path packets take to a destination.
 traceroute HOST
 ```
 
+### Example
+
+```bash
+traceroute google.com
+```
+
+### Common Uses
+
+* Identify routing issues.
+* Locate network bottlenecks.
+
+### Cybersecurity Context
+
+Useful when diagnosing connectivity problems across multiple networks.
+
 ### Related Commands
 
-- `ping`
+* `ping`
 
 ---
 
@@ -115,7 +150,7 @@ traceroute HOST
 
 ### Purpose
 
-Displays active network connections and listening sockets.
+Displays network sockets and listening ports.
 
 ### Syntax
 
@@ -123,13 +158,19 @@ Displays active network connections and listening sockets.
 ss -tulpn
 ```
 
+### Common Uses
+
+* View open ports.
+* Identify listening services.
+* Troubleshoot applications.
+
 ### Cybersecurity Context
 
-Useful for identifying listening services and unexpected open ports.
+Often used to identify unnecessary or suspicious services listening on a system.
 
 ### Related Commands
 
-- `netstat`
+* `netstat`
 
 ---
 
@@ -137,7 +178,7 @@ Useful for identifying listening services and unexpected open ports.
 
 ### Purpose
 
-Displays network connections and routing information (legacy).
+Displays network connections and routing information.
 
 ### Syntax
 
@@ -145,9 +186,18 @@ Displays network connections and routing information (legacy).
 netstat -tulpn
 ```
 
+### Common Uses
+
+* View active connections.
+* Troubleshoot networking.
+
+### Cybersecurity Context
+
+Legacy command still encountered on many systems.
+
 ### Related Commands
 
-- `ss`
+* `ss`
 
 ---
 
@@ -155,9 +205,15 @@ netstat -tulpn
 
 ### Purpose
 
-Queries DNS records.
+Queries DNS servers.
 
 ### Syntax
+
+```bash
+nslookup DOMAIN
+```
+
+### Example
 
 ```bash
 nslookup openai.com
@@ -165,7 +221,7 @@ nslookup openai.com
 
 ### Related Commands
 
-- `dig`
+* `dig`
 
 ---
 
@@ -173,17 +229,27 @@ nslookup openai.com
 
 ### Purpose
 
-Performs detailed DNS queries.
+Performs advanced DNS lookups.
 
 ### Syntax
+
+```bash
+dig DOMAIN
+```
+
+### Example
 
 ```bash
 dig openai.com
 ```
 
+### Cybersecurity Context
+
+Useful when investigating DNS records and troubleshooting name resolution.
+
 ### Related Commands
 
-- `nslookup`
+* `nslookup`
 
 ---
 
@@ -207,11 +273,11 @@ curl https://example.com
 
 ### Cybersecurity Context
 
-Frequently used to test web services and APIs.
+Frequently used to test APIs, download responses, and verify web services.
 
 ### Related Commands
 
-- `wget`
+* `wget`
 
 ---
 
@@ -219,7 +285,7 @@ Frequently used to test web services and APIs.
 
 ### Purpose
 
-Downloads files from the web.
+Downloads files from web servers.
 
 ### Syntax
 
@@ -227,9 +293,15 @@ Downloads files from the web.
 wget URL
 ```
 
+### Example
+
+```bash
+wget https://example.com/file.txt
+```
+
 ### Related Commands
 
-- `curl`
+* `curl`
 
 ---
 
@@ -237,7 +309,7 @@ wget URL
 
 ### Purpose
 
-Connects securely to a remote system.
+Creates a secure remote connection using SSH.
 
 ### Syntax
 
@@ -245,13 +317,19 @@ Connects securely to a remote system.
 ssh user@host
 ```
 
+### Example
+
+```bash
+ssh christoffer@192.168.1.10
+```
+
 ### Cybersecurity Context
 
-One of the most common protocols for secure remote administration.
+SSH is the standard protocol for secure remote administration.
 
 ### Related Commands
 
-- `scp`
+* `scp`
 
 ---
 
@@ -264,9 +342,48 @@ Securely copies files between systems using SSH.
 ### Syntax
 
 ```bash
-scp file.txt user@host:/path
+scp FILE user@host:/destination
 ```
+
+### Example
+
+```bash
+scp report.txt christoffer@192.168.1.10:/home/christoffer
+```
+
+### Common Uses
+
+* Transfer files securely.
+* Copy logs between systems.
+
+### Cybersecurity Context
+
+Useful when securely transferring investigation artifacts between Linux systems.
 
 ### Related Commands
 
-- `ssh`
+* `ssh`
+
+---
+
+# Common Mistakes
+
+| Problem                 | Cause                        |
+| ----------------------- | ---------------------------- |
+| Host unreachable        | Network connectivity issue   |
+| Connection refused      | Service not listening        |
+| Permission denied (SSH) | Incorrect credentials or key |
+
+---
+
+# Summary
+
+You should now understand how to inspect network interfaces, test connectivity, query DNS, identify open ports, and securely communicate with remote systems.
+
+---
+
+# Related Chapters
+
+* Processes
+* Security
+* Bash

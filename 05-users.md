@@ -43,7 +43,7 @@ whoami
 Output
 
 ```text
-christoffer
+user
 ```
 
 ### Common Uses
@@ -66,7 +66,7 @@ Useful before executing administrative commands or investigating permissions.
 
 ### Purpose
 
-Displays information about the current user, including user ID (UID), group ID (GID), and group memberships.
+Displays information about the current user, including the User ID (UID), Group ID (GID), and group memberships.
 
 ### Syntax
 
@@ -149,7 +149,7 @@ su USER
 ```bash
 su root
 
-su john
+su username
 ```
 
 ### Common Uses
@@ -171,7 +171,7 @@ Switching users is common during administration but should be carefully controll
 
 ### Purpose
 
-Changes a user's password.
+Changes the password for the current user or another user.
 
 ### Syntax
 
@@ -179,16 +179,17 @@ Changes a user's password.
 passwd
 ```
 
-### Example
+Administrator:
 
 ```bash
-passwd
+sudo passwd username
 ```
 
 ### Common Uses
 
 * Change your password.
-* Reset another user's password (administrator).
+* Reset another user's password.
+* Enforce password changes.
 
 ### Cybersecurity Context
 

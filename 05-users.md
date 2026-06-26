@@ -1,6 +1,24 @@
 # Users
 
-Linux supports multiple users and groups, allowing systems to separate privileges and resources.
+> **Estimated Reading Time:** 10–15 minutes
+> **Difficulty:** Beginner
+> **Prerequisites:** Permissions
+
+Linux is a multi-user operating system. Every process runs as a user, and permissions determine what each user is allowed to access. Understanding users and privileges is essential for both Linux administration and cybersecurity.
+
+---
+
+## What You'll Learn
+
+* Identifying the current user
+* User and group IDs
+* Running commands with elevated privileges
+* Switching users
+* Managing passwords
+
+---
+
+# User Commands
 
 ---
 
@@ -30,17 +48,17 @@ christoffer
 
 ### Common Uses
 
-- Verify the active account.
-- Confirm privilege changes.
+* Verify the active user.
+* Confirm privilege changes.
 
 ### Cybersecurity Context
 
-Useful before running administrative commands.
+Useful before executing administrative commands or investigating permissions.
 
 ### Related Commands
 
-- `id`
-- `sudo`
+* `id`
+* `sudo`
 
 ---
 
@@ -48,7 +66,7 @@ Useful before running administrative commands.
 
 ### Purpose
 
-Displays user and group IDs.
+Displays information about the current user, including user ID (UID), group ID (GID), and group memberships.
 
 ### Syntax
 
@@ -56,19 +74,25 @@ Displays user and group IDs.
 id
 ```
 
+### Example
+
+```bash
+id
+```
+
 ### Common Uses
 
-- Check UID and GID.
-- View group memberships.
+* Verify group memberships.
+* Troubleshoot permissions.
+* Confirm user identity.
 
 ### Cybersecurity Context
 
-Useful when troubleshooting permissions.
+Useful when determining whether an account has access to protected resources.
 
 ### Related Commands
 
-- `whoami`
-- `groups`
+* `whoami`
 
 ---
 
@@ -84,24 +108,27 @@ Executes a command with elevated privileges.
 sudo COMMAND
 ```
 
-### Example
+### Examples
 
 ```bash
 sudo apt update
+
+sudo systemctl restart ssh
 ```
 
 ### Common Uses
 
-- Install software.
-- Modify system configuration.
+* Install software.
+* Modify system configuration.
+* Perform administrative tasks.
 
 ### Cybersecurity Context
 
-Use only when necessary and follow the principle of least privilege.
+Only use elevated privileges when necessary. Following the principle of least privilege reduces security risks.
 
 ### Related Commands
 
-- `su`
+* `su`
 
 ---
 
@@ -117,9 +144,26 @@ Switches to another user account.
 su USER
 ```
 
+### Examples
+
+```bash
+su root
+
+su john
+```
+
+### Common Uses
+
+* Switch between accounts.
+* Perform administrative work.
+
+### Cybersecurity Context
+
+Switching users is common during administration but should be carefully controlled and audited.
+
 ### Related Commands
 
-- `sudo`
+* `sudo`
 
 ---
 
@@ -135,10 +179,46 @@ Changes a user's password.
 passwd
 ```
 
+### Example
+
+```bash
+passwd
+```
+
+### Common Uses
+
+* Change your password.
+* Reset another user's password (administrator).
+
 ### Cybersecurity Context
 
-Strong passwords are a fundamental security control.
+Strong, unique passwords are one of the most important security controls for protecting Linux systems.
 
 ### Related Commands
 
-- `sudo`
+* `sudo`
+
+---
+
+# Common Mistakes
+
+| Problem                   | Cause                                |
+| ------------------------- | ------------------------------------ |
+| `Permission denied`       | Command requires elevated privileges |
+| `sudo: command not found` | sudo is not installed or configured  |
+| Authentication failure    | Incorrect password entered           |
+
+---
+
+# Summary
+
+You should now understand how Linux identifies users, manages privileges, and controls access to administrative commands.
+
+---
+
+# Related Chapters
+
+* Permissions
+* Processes
+* Security
+* Git

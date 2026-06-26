@@ -1,4 +1,4 @@
-# Linux Notes
+# Linux Notes for Cybersecurity
 
 A practical Linux reference built while studying cybersecurity.
 

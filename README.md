@@ -61,4 +61,6 @@ It will continue to grow as I learn new Linux concepts, commands, and best pract
 
 # License
 
-This project is intended for educational purposes. Feel free to use the notes as a reference for your own learning.
+# License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

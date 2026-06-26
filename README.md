@@ -61,6 +61,4 @@ It will continue to grow as I learn new Linux concepts, commands, and best pract
 
 # License
 
-# License
-
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -29,7 +29,7 @@ Linux uses a hierarchical directory structure that starts at the root directory 
 /
 
 ├── home
-│   └── christoffer
+│   └── user
 │       ├── Desktop
 │       ├── Documents
 │       ├── Downloads
@@ -66,7 +66,7 @@ Starts from the root directory (`/`).
 Example:
 
 ```bash
-/home/christoffer/Documents
+/home/user/Documents
 ```
 
 ### Relative Path
@@ -119,7 +119,7 @@ pwd
 Output
 
 ```text
-/home/christoffer/Documents
+/home/user/Documents
 ```
 
 ### Common Uses

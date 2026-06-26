@@ -98,7 +98,7 @@ chown USER FILE
 ### Examples
 
 ```bash
-sudo chown christoffer report.txt
+sudo chown user report.txt
 
 sudo chown root script.sh
 ```
